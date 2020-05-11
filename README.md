@@ -1,6 +1,10 @@
-# Hello world JavaScript action
+# Hello world Dart action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+A "Hello World" GitHub Action coded in Dart.
+
+This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+
+The Dart application is located in the [`app`](./app) folder. The [`index.js`](index.js) file is used to run it using the `dart` command.
 
 ## Inputs
 
@@ -17,7 +21,16 @@ The time we greeted you.
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+jobs:
+  example:
+    runs-on: ubuntu-latest
+
+    container: google/dart:2
+
+    steps:
+      - uses: axel-op/hello-world-dart-action@master
+        id: dart-action
+        with:
+          who-to-greet: "Mona the Octocat"
+      - run: echo 'The time was ${{ steps.dart-action.outputs.time }}'
 ```

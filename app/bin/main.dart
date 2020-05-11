@@ -10,7 +10,7 @@ void main(List<String> arguments) async {
     // `who-to-greet` input defined in action metadata file
     final nameToGreet = gaction.Input(
       'who-to-greet',
-      isRequired: false,
+      isRequired: true,
       canBeEmpty: true,
     ).value;
 

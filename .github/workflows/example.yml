@@ -9,6 +9,8 @@ jobs:
     container: google/dart:2
 
     steps:
-      - uses: axel-op/dart-action-without-container@master
+      - uses: axel-op/hello-world-dart-action@master
+        id: dart-action
         with:
           who-to-greet: "you"
+      - run: echo 'The time was ${{ steps.dart-action.outputs.time }}'
