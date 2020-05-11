@@ -1,0 +1,14 @@
+name: Example workflow
+
+on: push
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+
+    container: google/dart:2
+
+    steps:
+      - uses: axel-op/dart-action-without-container@master
+        with:
+          who-to-greet: "you"

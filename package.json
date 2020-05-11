@@ -1,5 +1,5 @@
 {
-  "name": "hello-world-javascript-action",
+  "name": "dart-action-without-container",
   "version": "1.0.0",
   "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
   "main": "index.js",
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/hello-world-javascript-action.git"
+    "url": "git+https://github.com/axel-op/dart-action-without-container.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "axel-op",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/actions/hello-world-javascript-action/issues"
+    "url": "https://github.com/axel-op/dart-action-without-container.git"
   },
-  "homepage": "https://github.com/actions/hello-world-javascript-action#readme",
+  "homepage": "https://github.com/axel-op/dart-action-without-container.git",
   "dependencies": {
-    "@actions/core": "^1.1.0",
-    "@actions/github": "^1.1.0"
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4"
   }
 }
