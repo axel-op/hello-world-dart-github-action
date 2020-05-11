@@ -6,28 +6,28 @@ import 'package:github_actions_toolkit/github_actions_toolkit.dart' as gaction;
 void main(List<String> arguments) async {
   exitCode = 0;
 
+  const logger = gaction.log;
   try {
     // `who-to-greet` input defined in action metadata file
     final nameToGreet = gaction.Input(
       'who-to-greet',
       isRequired: true,
       canBeEmpty: true,
-    ).value;
+    );
 
-    gaction.log.info('Hello $nameToGreet!');
+    logger.info('Hello ${nameToGreet.value}!');
 
     final time = app.getTime().toString();
     gaction.setOutput('time', time);
 
-    await gaction.log.group('Event payload', () async {
+    await logger.group('Event payload', () async {
       // Get the JSON webhook payload for the event that triggered the workflow
-      final payloadPath = Platform.environment['GITHUB_EVENT_PATH'];
-      final payload = File(payloadPath).readAsStringSync();
+      final payload = gaction.env.eventPayload;
       // Uncomment the following line to log the event payload:
-      // gaction.log.info('The event payload: $payload');
+      // logger.info('The event payload: $payload');
     });
   } catch (error) {
-    gaction.log.error(error.toString());
+    logger.error(error.toString());
     exitCode = 1;
   }
 }
