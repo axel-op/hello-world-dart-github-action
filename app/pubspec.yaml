@@ -7,9 +7,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  github_actions_toolkit:
-    git:
-      url: https://github.com/axel-op/github_actions_toolkit.dart
+  github_actions_toolkit: 0.0.2
 
 dev_dependencies:
   pedantic: ^1.8.0

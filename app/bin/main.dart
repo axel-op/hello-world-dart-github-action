@@ -19,7 +19,7 @@ void main(List<String> arguments) async {
     final time = app.getTime().toString();
     gaction.setOutput('time', time);
 
-    await gaction.group('Event payload', () async {
+    await gaction.log.group('Event payload', () async {
       // Get the JSON webhook payload for the event that triggered the workflow
       final payloadPath = Platform.environment['GITHUB_EVENT_PATH'];
       final payload = File(payloadPath).readAsStringSync();
