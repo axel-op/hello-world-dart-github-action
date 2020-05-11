@@ -14,6 +14,11 @@ async function run() {
     core.endGroup();
 
     execOptions.ignoreReturnCode = true;
+    execOptions.silent = true;
+    execOptions.listeners = {
+      stdout: (data) => process.stdout.write(data.toString()),
+      stderr: (data) => process.stderr.write(data.toString())
+    };
     const exitCode = await exec.exec('dart', ['bin/main.dart'], execOptions);
 
     process.exitCode = exitCode;
