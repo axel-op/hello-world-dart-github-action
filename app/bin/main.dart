@@ -8,7 +8,7 @@ void main(List<String> arguments) async {
 
   const logger = gaction.log;
   try {
-    // `who-to-greet` input defined in action metadata file
+    // `who-to-greet` input defined in `action.yml` file
     final nameToGreet = gaction.Input(
       'who-to-greet',
       isRequired: true,
@@ -18,6 +18,9 @@ void main(List<String> arguments) async {
     logger.info('Hello ${nameToGreet.value}!');
 
     final time = app.getTime().toString();
+
+    // This output is defined in the `action.yml` file
+    // and can be used by the next steps in the workflow.
     gaction.setOutput('time', time);
 
     await logger.group('Event payload', () async {
