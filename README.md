@@ -4,7 +4,7 @@ A "Hello World" GitHub Action coded in Dart.
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
-The Dart application is located in the [`app`](./app) folder. The [`index.js`](index.js) file is used to run it using the `dart` command.
+The Dart application is located in the [`app`](./app) folder. The Javascript files under [`scripts`](scripts) are used to run it using the `dart` command.
 
 ## Inputs
 

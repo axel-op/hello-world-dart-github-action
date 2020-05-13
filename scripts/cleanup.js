@@ -5,7 +5,7 @@ const path = require('path');
 async function run() {
     try {
         // The folder containing the Dart files is named 'app'
-        const appDir = path.join(__dirname, './app');
+        const appDir = path.join(__dirname, '..', 'app');
 
         // No need to re-download dependencies
 
@@ -18,9 +18,8 @@ async function run() {
                 stderr: (data) => process.stderr.write(data.toString())
             }
         };
-        const exitCode = await exec.exec('dart', ['bin/cleanup.dart'], execOptions);
 
-        process.exitCode = exitCode;
+        process.exitCode = await exec.exec('dart', ['bin/cleanup.dart'], execOptions);
     } catch (error) {
         core.setFailed(error.message);
     }

@@ -5,13 +5,11 @@ const path = require('path');
 async function run() {
     try {
         // The folder containing the Dart files is named 'app'
-        const appDir = path.join(__dirname, './app');
+        const appDir = path.join(__dirname, '..', 'app');
 
         const execOptions = { cwd: appDir };
 
-        core.startGroup('Getting dependencies');
-        await exec.exec('pub', ['get'], execOptions);
-        core.endGroup();
+        await core.group('Getting dependencies', () => exec.exec('pub', ['get'], execOptions));
 
         execOptions.ignoreReturnCode = true;
         execOptions.silent = true;
