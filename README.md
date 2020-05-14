@@ -6,6 +6,8 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 The Dart application is located in the [`app`](./app) folder. The Javascript files under [`scripts`](scripts) are used to run it using the `dart` command.
 
+This action requires the workflow to set up a Dart container before its execution (see the example below). If you want your action to be run in any workflow, without this constraint, see [this template for a containerized Dart Action](https://github.com/axel-op/containerized-dart-action).
+
 ## Inputs
 
 ### `who-to-greet`
@@ -25,7 +27,7 @@ jobs:
   example:
     runs-on: ubuntu-latest
 
-    container: google/dart:2
+    container: google/dart:2 # Required to run the action
 
     steps:
       - uses: axel-op/hello-world-dart-action@master
