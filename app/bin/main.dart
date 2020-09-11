@@ -9,11 +9,7 @@ void main(List<String> arguments) async {
   const logger = gaction.log;
   try {
     // `who-to-greet` input defined in `action.yml` file
-    final nameToGreet = gaction.Input(
-      'who-to-greet',
-      isRequired: true,
-      canBeEmpty: true,
-    );
+    final nameToGreet = gaction.Input('who-to-greet', isRequired: true);
 
     logger.info('Hello ${nameToGreet.value}!');
 
