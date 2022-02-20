@@ -1,12 +1,14 @@
 # Hello world Dart action
 
+> [See here](https://github.com/axel-op/self-contained-dart-action) to build an action with Dart that doesn't need a Dart container to run.
+
 A "Hello World" GitHub Action coded in Dart.
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
 The Dart application is located in the [`app`](./app) directory. To use this template, just edit the files inside this directory as you would with any Dart program, and it will work without modifiying any other file.
 
-This action requires the workflow to set up a Dart container before its execution (see the example below). If you want your action to be run in any workflow, without this constraint, see [this template for a containerized Dart Action](https://github.com/axel-op/containerized-dart-action).
+This action requires the workflow to set up a Dart container before its execution (see the example below). [See here](https://github.com/axel-op/self-contained-dart-action) to build an action with Dart that doesn't need a Dart container to run.
 
 ## Inputs
 
