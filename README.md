@@ -1,6 +1,6 @@
 # Hello world Dart action
 
-> [See here](https://github.com/axel-op/self-contained-dart-action) to build an action with Dart that doesn't need a Dart container to run.
+> [See here](https://gist.github.com/axel-op/deff66ac2f28a01813193d90de36c564) for a comparison of the different ways to build a GitHub Action with Dart.
 
 A "Hello World" GitHub Action coded in Dart.
 
